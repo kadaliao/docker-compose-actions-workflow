@@ -2,7 +2,11 @@ version: '3'
 services:
   web:
     container_name: webapp-frontend
-    build: .
+    build:
+      context: .
+      # args:
+      #   - http_proxy:"http://host.docker.internal:8118"
+      #   - https_proxy:"http://host.docker.internal:8118"
     ports:
       - "5000:5000"
   redis:
